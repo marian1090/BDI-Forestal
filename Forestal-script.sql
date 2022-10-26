@@ -1,19 +1,19 @@
 CREATE DATABASE forestal
 
 
---tipo_empleado
---empleado
---anticipo
+--TABLA TIPO EMPLEADO
+--TABLA EMPLEADO
+--TABLA ANTICIPO
 
---supermercado
---vale
---insumos
+--TABLA SUPERMERCADO
+--TABLA VALE
+--TABLA INSUMO
 
---empleado-insumo
---remito
---empleado-remito
+--TABLA EMPLEADO INSUMO 
+--TABLA REMITO
+--TABLA EMPLEADO REMITO
 
---corte
---producciones
---producciones-corte
---empleado-producciones
+--TABLA CORTE
+--TABLA PRODUCCIONES
+--TABLA PRODUCCIONES CORTE
+--TABLA EMPLEADO PRODUCCIONES
