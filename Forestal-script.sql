@@ -7,6 +7,13 @@ CREATE DATABASE forestal
 --TABLA SUPERMERCADO
 
 --TABLA VALE
+CREATE TABLE tipo_vales(
+id_tipo_vale INT IDENTITY(1,1) CONSTRAINT PK_id_tipo_vale PRIMARY KEY,
+nombre VARCHAR(50),
+direccion VARCHAR(50),
+);
+
+--TABLA VALE
 CREATE TABLE vale(
 nro_vale INT,
 cod_empleado INT,
@@ -17,6 +24,7 @@ periodo VARCHAR(7)
 CONSTRAINT FK_cod_empleado_vale FOREIGN KEY (cod_empleado) REFERENCES empleados(cod_empleado),
 CONSTRAINT FK_id_tipo_vale FOREIGN KEY (id_tipo_vale) REFERENCES tipo_vales(id_tipo_vale)
 );
+
 --TABLA INSUMO
 CREATE TABLE insumo(
 id_insumo INT IDENTITY(1,1),
