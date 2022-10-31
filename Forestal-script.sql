@@ -2,8 +2,37 @@ CREATE DATABASE forestal
 
 
 --TABLA TIPO_EMPLEADO
+CREATE TABLE tipo_empleado(
+id_TipoEmpleado INT IDENTITY(1,1) CONSTRAINT PK_id_TipoEmpleado PRIMARY KEY,
+nombre VARCHAR(50),
+sueldoBasico DECIMAL(10,2),
+activo VARCHAR(2),
+);
+
 --TABLA EMPLEADO
+CREATE TABLE empleados(
+cod_empleado INT IDENTITY(1,1) CONSTRAINT PK_cod_empleado PRIMARY KEY,
+id_TipoEmpleado INT,
+legajo VARCHAR(15),
+nombre VARCHAR(50),
+apellido VARCHAR(50),
+cuil BIGINT,
+fecha_ingreso DATE,
+activo VARCHAR(2),
+CONSTRAINT FK_id_TipoEmpleado_empleados FOREIGN KEY (id_TipoEmpleado) REFERENCES empresa.tipo_empleado(id_TipoEmpleado),
+);
+
 --TABLA ANTICIPO
+CREATE TABLE anticipo(
+id_anticipo INT CONSTRAINT PK_id_anticipo PRIMARY KEY,
+cod_empleado INT,
+fecha DATE,
+monto DECIMAL(10,2),
+periodo VARCHAR(7),
+detalle VARCHAR(200),
+CONSTRAINT FK_cod_empleado_anticipo FOREIGN KEY (cod_empleado) REFERENCES empresa.empleados(cod_empleado),
+);
+
 --TABLA SUPERMERCADO
 
 --TABLA TIPO VALE
