@@ -8,9 +8,10 @@ CREATE DATABASE forestal
 
 --TABLA TIPO VALE
 CREATE TABLE tipo_vales(
-id_tipo_vale INT IDENTITY(1,1) CONSTRAINT PK_id_tipo_vale PRIMARY KEY,
+id_tipo_vale INT IDENTITY(1,1),
 nombre VARCHAR(50),
-direccion VARCHAR(50),
+direccion VARCHAR(50)
+CONSTRAINT PK_id_tipo_vale PRIMARY KEY,
 );
 
 --TABLA VALE
