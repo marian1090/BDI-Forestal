@@ -132,6 +132,7 @@ CREATE TABLE produccion(
 CREATE TABLE produccion_corte(
 	id_produccion INT,
 	cod_corte INT,
+	cantidad DECIMAL(10,2),
 	CONSTRAINT PK_produccion_corte PRIMARY KEY (id_produccion, cod_corte),
 	CONSTRAINT FK_produccion_corte_produccion FOREIGN KEY (id_produccion) REFERENCES produccion(id_produccion),
 	CONSTRAINT FK_produccion_corte_corte FOREIGN KEY (cod_corte) REFERENCES corte(cod_corte)

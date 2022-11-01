@@ -71,16 +71,16 @@ INSERT INTO produccion (id_produccion, cod_corte, fecha) values ()
 ---------------
 -- Produccion_corte --marian
 ---------------
-INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (1,4);
-INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (1,8);
-INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (1,2);
-INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (2,8);
-INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (2,4);
-INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (2,3);
-INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (2,1);
-INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (3,9);
-INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (3,10);
-INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (3,2);
+INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (1,4,25);
+INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (1,8,30);
+INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (1,2,45);
+INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (2,8,70);
+INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (2,4,20);
+INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (2,3,40);
+INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (2,1,70);
+INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (3,9,15);
+INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (3,10,15);
+INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (3,2,70);
 --SELECT * FROM produccion_corte
 
 ---------------
