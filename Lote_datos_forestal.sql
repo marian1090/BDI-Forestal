@@ -51,8 +51,7 @@ INSERT INTO insumo (producto, precio, id_proveedor, activo) VALUES ('ESPADA WILS
 INSERT INTO insumo (producto, precio, id_proveedor, activo) VALUES ('ESPADA ACERADA',7000.00,2,'SI');
 INSERT INTO insumo (producto, precio, id_proveedor, activo) VALUES ('PANTALON ANTICORTE',18000.00,2,'SI');
 INSERT INTO insumo (producto, precio, id_proveedor, activo) VALUES('CONJUNTO LLUVIA',3200.00,3,'SI');
-
-SELECT * FROM insumo
+--SELECT * FROM insumo
 
 ---------------
 -- Empleado_insumo --marian
@@ -107,8 +106,7 @@ INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (10,2);
 INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (3,3);
 INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (2,3);
 INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (9,3);
-
-SELECT * FROM empleado_produccion
+--SELECT * FROM empleado_produccion
 
 
 ---------------
@@ -124,8 +122,7 @@ INSERT INTO remito (primeros, id_produccion, fecha, cantidad) VALUES (6,2,'20221
 INSERT INTO remito (primeros, id_produccion, fecha, cantidad) VALUES (27,3,'20221012',20);
 INSERT INTO remito (primeros, id_produccion, fecha, cantidad) VALUES (27,3,'20221014',30);
 INSERT INTO remito (primeros, id_produccion, fecha, cantidad) VALUES (27,3,'20221017',50);
-
-SELECT * FROM remito
+--SELECT * FROM remito
 
 ---------------
 -- Empleado_remito --marian
