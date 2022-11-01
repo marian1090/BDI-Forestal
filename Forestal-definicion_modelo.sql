@@ -73,7 +73,7 @@ CREATE TABLE vale(
 	id_tipo_vale INT not null,
 	fecha DATE not null,
 	monto DECIMAL(10,2) not null,
-	periodo DATE not null,
+	periodo VARCHAR(7) not null,
 	CONSTRAINT PK_vale PRIMARY KEY(nro_vale),
 	CONSTRAINT FK_vale_empleado FOREIGN KEY (cod_empleado) REFERENCES empleado(cod_empleado),
 	CONSTRAINT FK_vale_supermercado FOREIGN KEY (id_tipo_vale) REFERENCES tipo_vale(id_tipo_vale)
