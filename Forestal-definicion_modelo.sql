@@ -68,15 +68,23 @@ CREATE TABLE tipo_vale(
 
 --TABLA VALE
 CREATE TABLE vale(
-	nro_vale INT not null,
+	nro_vale INT IDENTITY not null,
 	cod_empleado INT not null,
 	id_tipo_vale INT not null,
 	fecha DATE not null,
 	monto DECIMAL(10,2) not null,
-	periodo VARCHAR(7) not null,
+	periodo DATE not null,
 	CONSTRAINT PK_vale PRIMARY KEY(nro_vale),
 	CONSTRAINT FK_vale_empleado FOREIGN KEY (cod_empleado) REFERENCES empleado(cod_empleado),
 	CONSTRAINT FK_vale_supermercado FOREIGN KEY (id_tipo_vale) REFERENCES tipo_vale(id_tipo_vale)
+);
+
+--TABLA PROVEEDOR
+CREATE TABLE proveedor(
+	id_proveedor INT IDENTITY(1,1) not null,
+	nombre VARCHAR(50) not null,
+	direccion VARCHAR(2000) not null,
+	CONSTRAINT PK_proveedor PRIMARY KEY(id_proveedor),
 );
 
 --TABLA INSUMO
@@ -84,9 +92,10 @@ CREATE TABLE insumo(
 	id_insumo INT IDENTITY(1,1) not null,
 	producto VARCHAR(50) not null,
 	precio DECIMAL(10,2) not null,
-	proveedor INT not null,
+	id_proveedor INT not null,
 	activo varchar(2) not null,
-	CONSTRAINT PK_id_insumo PRIMARY KEY(id_insumo),
+	CONSTRAINT PK_insumo PRIMARY KEY(id_insumo),
+	CONSTRAINT FK_insumo_proveedor FOREIGN KEY (id_proveedor) REFERENCES proveedor(id_proveedor)
 );
 
 --TABLA EMPLEADO_INSUMO 

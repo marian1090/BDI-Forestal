@@ -26,7 +26,7 @@ INSERT INTO empleado (cod_empleado, id_TipoEmpleado, legajo, nombre, apellido, c
 ---------------
 -- Anticipo -- gaton 
 ---------------
-INSERT INTO anticipo (id_anticipo, nombcod_empleadore, fecha, monto, periodo, detalle) values ()
+INSERT INTO anticipo (id_anticipo, cod_empledo, fecha, monto, periodo, detalle) values ()
 
 ---------------
 -- Tipo_vale--ariel
