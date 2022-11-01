@@ -117,14 +117,15 @@ CREATE TABLE produccion(
 	cod_corte INT not null,
 	fecha DATE not null,
 	CONSTRAINT PK_produccion PRIMARY KEY(id_produccion),
-	CONSTRAINT FK_produccion_corte FOREIGN KEY (cod_corte) REFERENCES corte(cod_corte),
 );
 
 --TABLA PRODUCCION_CORTE
 CREATE TABLE produccion_corte(
 	id_produccion INT,
 	cod_corte INT,
-	CONSTRAINT PK_produccion_corte PRIMARY KEY (id_produccion, cod_corte)
+	CONSTRAINT PK_produccion_corte PRIMARY KEY (id_produccion, cod_corte),
+	CONSTRAINT FK_produccion_corte_produccion FOREIGN KEY (id_produccion) REFERENCES produccion(id_produccion),
+	CONSTRAINT FK_produccion_corte_corte FOREIGN KEY (cod_corte) REFERENCES corte(cod_corte)
 );
 
 --TABLA EMPLEADO_PRODUCCION
