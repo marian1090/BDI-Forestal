@@ -57,7 +57,17 @@ SELECT * FROM insumo
 ---------------
 -- Empleado_insumo --marian
 ---------------
-INSERT INTO empleado_insumo (cod_empleado, id_insumo, fecha, periodo, cantidad) values ()
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (1,8,'20220906','09-2022',1);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (8,10,'20220906','09-2022',1);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (8,5,'20220906','09-2022',1);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (10,8,'20220907','09-2022',1);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (5,3,'20220915','09-2022',2);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (3,10,'20220916','09-2022',1);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (9,9,'20220923','09-2022',2);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (6,2,'20221005','10-2022',1);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (8,6,'20221009','10-2022',3);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (2,4,'20221010','10-2022',1);
+--SELECT * FROM empleado_insumo
 
 ---------------
 -- Corte --ariel
@@ -72,7 +82,17 @@ INSERT INTO produccion (id_produccion, cod_corte, fecha) values ()
 ---------------
 -- Produccion_corte --marian
 ---------------
-INSERT INTO produccion_corte (id_produccion, cod_corte) values ()
+INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (1,4);
+INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (1,8);
+INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (1,2);
+INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (2,8);
+INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (2,4);
+INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (2,3);
+INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (2,1);
+INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (3,9);
+INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (3,10);
+INSERT INTO produccion_corte (id_produccion, cod_corte) VALUES (3,2);
+--SELECT * FROM produccion_corte
 
 ---------------
 -- Empleado_produccion --agustin
@@ -108,6 +128,29 @@ INSERT INTO remito (primeros, id_produccion, fecha, cantidad) VALUES (27,3,'2022
 SELECT * FROM remito
 
 ---------------
--- Empleado_remito
+-- Empleado_remito --marian
 ---------------
-INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) values ()
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (3,4,1);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (2,4,1);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (3,4,2);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (2,4,2);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (1,6,3);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (10,6,3);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (3,6,4);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (6,6,4);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (1,6,4);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (7,6,4);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (10,6,4);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (6,6,5);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (3,6,5);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (1,6,6);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (3,6,6);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (10,6,7);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (3,27,8);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (2,27,8);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (9,27,9);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (2,27,9);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (3,27,10);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (2,27,10);
+INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (9,27,10);
+--SELECT * FROM empleado_remito
