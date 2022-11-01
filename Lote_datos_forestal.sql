@@ -29,7 +29,7 @@ INSERT INTO empleado (cod_empleado, id_TipoEmpleado, legajo, nombre, apellido, c
 INSERT INTO anticipo (id_anticipo, nombcod_empleadore, fecha, monto, periodo, detalle) values ()
 
 ---------------
--- Tipo_vale--agustin
+-- Tipo_vale--ariel
 ---------------
 INSERT INTO tipo_vale (id_Tipo_vale, nombre, direccion) values ()
 
@@ -39,7 +39,7 @@ INSERT INTO tipo_vale (id_Tipo_vale, nombre, direccion) values ()
 INSERT INTO vale (nro_vale, cod_empleado, id_Tipo_vale, fecha, monto, periodo) values ()
 
 ---------------
--- Insumo --ariel
+-- Insumo --agustin
 ---------------
 INSERT INTO insumo (id_insumo, producto, precio, proveedor, activo) values ()
 
