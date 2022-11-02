@@ -21,12 +21,25 @@ INSERT INTO tipo_empleado (id_TipoEmpleado, nombre, sueldoBasico, activo) values
 ---------------
 -- Empleado ---gaston 
 ---------------
-INSERT INTO empleado (cod_empleado, id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) values ()
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(7,'56/056','LUIS ANDRES','AYALA',	20321581508	,'08/10/2004','SI');
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(7,'56/057','EMERSON SANDRO','RIOS',	20261023282	,'08/10/2004','SI');
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(4,'8/6','LUCAS AGUSTIN','BRIZUELA',	20135944514	,'08/15/2006','SI');
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(8,'11/6','BASILIO BENITO','BENITEZ',	23186856449	,'08/01/1996','SI');
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(7,'48/2','JUAN SIMON','BENITEZ',	23161295949	,'05/17/2004','SI');
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(4,'56/058','GABRIEL','ENCINAS BENITEZ',	20142209609	,'11/01/1996','SI');
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(7,'24/6','HORACIO DANIEL','BARRIOS',	24326219785	,'01/02/1998','SI');
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(7,'23/9','BENITO','CHAVEZ IBAÑEZ',	20923575384	,'11/30/2000','SI');
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(7,'4/8','JOSE','ESCOBAR TOLEDO',	20923253662	,'12/01/1999','SI');
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(7,'13/0','ANDREZ','ESTEPA',	20149737856	,'10/01/1996','SI');
+--SELECT * FROM empleado
 
 ---------------
 -- Anticipo -- gaton 
 ---------------
-INSERT INTO anticipo (id_anticipo, cod_empledo, fecha, monto, periodo, detalle) values ()
+INSERT INTO anticipo (cod_empleado, fecha, monto, periodo, detalle) VALUES (5,'20220915',10000.00,'09-2022','Gastos personales');
+INSERT INTO anticipo (cod_empleado, fecha, monto, periodo, detalle) VALUES (3,'20220928',7000.00,'09-2022','Consultas medica');
+INSERT INTO anticipo (cod_empleado, fecha, monto, periodo, detalle) VALUES (1,'20221014',12000.00,'10-2022','Gasto de tarjeta');
+--SELECT * FROM anticipo
 
 ---------------
 -- Tipo_vale--ariel
@@ -36,7 +49,17 @@ INSERT INTO tipo_vale (id_Tipo_vale, nombre, direccion) values ()
 ---------------
 -- Vale --gaston 
 ---------------
-INSERT INTO vale (nro_vale, cod_empleado, id_Tipo_vale, fecha, monto, periodo) values ()
+INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (4,8,'20220908',15000,'09-2022')
+INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (2,1,'20220909',12500,'09-2022')
+INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (5,1,'20220909',20000,'09-2022')
+INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (10,5,'20220922',7000,'09-2022')
+INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (3,7,'20220924',17000,'09-2022')
+INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (4,1,'20220929',5000,'09-2022')
+INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (9,3,'20221005',25000,'10-2022')
+INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (7,3,'20221006',28000,'10-2022')
+INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (5,1,'20221012',23500,'10-2022')
+INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (7,4,'20221014',10000,'10-2022')
+--SELECT * FROM vale
 
 ---------------
 -- Insumo --agustin
