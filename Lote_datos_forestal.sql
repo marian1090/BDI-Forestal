@@ -16,7 +16,18 @@ USE Forestal;
 ---------------
 -- Tipo empleado-- ariel
 ---------------
-INSERT INTO tipo_empleado (id_TipoEmpleado, nombre, sueldoBasico, activo) values ()
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('CAMIONERO', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('CAPATAZ', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('CHOFER FORESTAL', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('GRUISTA', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('MARCADOR', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('MECANICO', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('MOTOSIERRISTA', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('PAQUETERO', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('PEON GENERAL AGRARIO', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('PEON RURAL', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('TRACTORISTA', 90000, 'SI');
+INSERT INTO tipo_empleado (nombre, sueldoBasico, activo) VALUES ('TRANSPORTISTA', 90000, 'SI');
 
 ---------------
 -- Empleado ---gaston 
@@ -44,7 +55,17 @@ INSERT INTO anticipo (cod_empleado, fecha, monto, periodo, detalle) VALUES (1,'2
 ---------------
 -- Tipo_vale--ariel
 ---------------
-INSERT INTO tipo_vale (id_Tipo_vale, nombre, direccion) values ()
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('SUPERMERCADO EL GRINGO','AV. SAN MARTIN 2396 -WANDA-');
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('CARNICERIA WANDA', 'BARRIO INDUSTRIAL -WANDA-');
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('SUPERMERCADO RUTA 19', 'RUTA 19 Y RUTA 12 -WANDA-');
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('SUPERMERCADO CERRO AZUL', 'BARRIO OBRERO -WANDA-');
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('SUPERMERCADO TATIN', 'AV. SAN MARTIN 2932 -WANDA-');
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('SUPERMERCADO AVENIDA', 'BARRIO SAN ROQUE -WANDA-');
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('SUPEMERCADO ESPERANZA', 'ENTRERRIOS 1293 -PTO ESPERANZA-');
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('SUPERMERCADO LA NUEVA', 'BARRIO NUEVO -PTO LIBERTAD-');
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('CARNICERIA PTO LIBERTAD', 'BARRIO NUEVO -PTO LIBERTAD-');
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('SUPERMERCADO RICKI', 'CENTRO -WANDA-');
+INSERT INTO tipo_vale (nombre, direccion) VALUES ('SUPERMERCADO VIVIANDY', 'AV. SAN MARTIN 2819 -WANDA-');
 
 ---------------
 -- Vale --gaston 
@@ -94,12 +115,23 @@ INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) 
 ---------------
 -- Corte --ariel
 ---------------
-INSERT INTO corte (cod_corte, corte, descripcion, precioVenta, activo) values ()
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('CAR*KISIEL','CAR*KISIEL',0.3,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('COR*PINDO','COR*PINDO',1.1,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('EXT*PINDO','EXT*PINDO',0.45,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('CAR*PINDO','CAR*PINDO',0.45,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('EyC*PINDO','EyC*PINDO',0.9	,'NO');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE*M11/M.B.M.SV','ROLLO PIN.M11/M.B.M.',4.78,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE*PIN.MADER.ES','ROLLO PIN.M.MADER.ESP',9.03,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE*PIN.CHOD.ESP','ROLLO PINDO CHODORGE',0.8,'NO');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('COR-PINDO','COR-PINDO',1.1,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('CAR-PINDO','CAR-PINDO',0.45,'SI');
 
 ---------------
 -- Produccion --ariel
 ---------------
-INSERT INTO produccion (id_produccion, cod_corte, fecha) values ()
+INSERT INTO produccion (fecha,toneladas) VALUES ('20220906',100);
+INSERT INTO produccion (fecha,toneladas) VALUES ('20220928',200);
+INSERT INTO produccion (fecha,toneladas) VALUES ('20221012',100);
 
 ---------------
 -- Produccion_corte --marian
