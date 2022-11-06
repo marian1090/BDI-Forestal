@@ -135,11 +135,11 @@ INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) 
 INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (8,6,'20221009','10-2022',3);
 INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (2,4,'20221010','10-2022',1);
 INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (13,9,'20221010','10-2022',2);
-INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (16,12,'20221010','10-2022',1);
-INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (16,15,'20221010','10-2022',1);
-INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (16,11,'20221011','10-2022',1);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (15,12,'20221010','10-2022',1);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (15,15,'20221010','10-2022',1);
+INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (15,11,'20221011','10-2022',1);
 INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) VALUES (3,10,'20221015','10-2022',1);
---SELECT * FROM empleado_insumo
+--SELECT * FROM empleado_insumo 
 
 ---------------
 -- Corte 
