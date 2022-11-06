@@ -45,11 +45,14 @@ INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ing
 --SELECT * FROM empleado
 
 ---------------
--- Anticipo -- gaton 
+-- Anticipo 
 ---------------
 INSERT INTO anticipo (cod_empleado, fecha, monto, periodo, detalle) VALUES (5,'20220915',10000.00,'09-2022','Gastos personales');
 INSERT INTO anticipo (cod_empleado, fecha, monto, periodo, detalle) VALUES (3,'20220928',7000.00,'09-2022','Consultas medica');
 INSERT INTO anticipo (cod_empleado, fecha, monto, periodo, detalle) VALUES (1,'20221014',12000.00,'10-2022','Gasto de tarjeta');
+INSERT INTO anticipo (cod_empleado, fecha, monto, periodo, detalle) VALUES (11,'20221017',12000.00,'10-2022','Emergencia');
+INSERT INTO anticipo (cod_empleado, fecha, monto, periodo, detalle) VALUES (2,'20221025',12000.00,'10-2022','Gastos personales');
+INSERT INTO anticipo (cod_empleado, fecha, monto, periodo, detalle) VALUES (7,'20221103',12000.00,'10-2022','Gasto de tarjeta');
 --SELECT * FROM anticipo
 
 ---------------
@@ -81,6 +84,14 @@ INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (7,3
 INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (5,1,'20221012',23500,'10-2022')
 INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (7,4,'20221014',10000,'10-2022')
 --SELECT * FROM vale
+
+---------------
+-- Proveedor 
+---------------
+INSERT INTO proveedor (nombre, direccion) VALUES ('YELEN REPUESTOS', 'AV. SAN MARTIN -WANDA-');
+INSERT INTO proveedor (nombre, direccion) VALUES ('CORRALON WANDA' , 'CALLE LAS ORTENCIAS -WANDA-');
+INSERT INTO proveedor (nombre, direccion) VALUES ('LUBRICENTRO FORESTAL', 'BARRIO LAPACHILLO -WANDA-'); 
+--SELECT * FROM proveedor
 
 ---------------
 -- Insumo --agustin
