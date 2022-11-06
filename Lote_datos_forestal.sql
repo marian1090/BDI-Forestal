@@ -94,7 +94,6 @@ INSERT INTO vale (cod_empleado, id_Tipo_vale, fecha, monto, periodo) VALUES (11,
 --SELECT * FROM vale
 
 ---------------
-<<<<<<< HEAD
 -- Proveedor 
 ---------------
 INSERT INTO proveedor (nombre, direccion) VALUES ('YELEN REPUESTOS', 'AV. SAN MARTIN -WANDA-');
@@ -103,10 +102,7 @@ INSERT INTO proveedor (nombre, direccion) VALUES ('LUBRICENTRO FORESTAL', 'BARRI
 --SELECT * FROM proveedor
 
 ---------------
--- Insumo --agustin
-=======
 -- Insumo 
->>>>>>> ba1a233df851d67da98ffa927c1b4e996d95b26e
 ---------------
 INSERT INTO insumo (producto, precio, id_proveedor, activo) VALUES ('TUERCA ESPARRAGO',10.00,1,'SI');
 INSERT INTO insumo (producto, precio, id_proveedor, activo) VALUES ('PALANCA CEBADOR',4500.00,1,'SI');
