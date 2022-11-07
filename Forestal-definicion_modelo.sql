@@ -169,3 +169,6 @@ CREATE TABLE empleado_remito (
 );
 
 --RESTRICCIONES DE TABLAS--
+/*1 - el número de legajo de un empleado es único */
+ALTER TABLE empleado
+	ADD CONSTRAINT UQ_empleado_legajo UNIQUE (legajo);
