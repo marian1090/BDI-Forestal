@@ -190,7 +190,7 @@ INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (4,1,30
 --SELECT * FROM produccion_corte
 
 ---------------
--- Empleado_produccion --agustin
+-- Empleado_produccion
 ---------------
 INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (3,1);
 INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (2,1);
