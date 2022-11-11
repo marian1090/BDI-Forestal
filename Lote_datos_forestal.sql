@@ -144,21 +144,21 @@ INSERT INTO empleado_insumo (id_insumo, cod_empleado, fecha, periodo, cantidad) 
 ---------------
 -- Corte 
 ---------------
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('CAR*KISIEL','CAR*KISIEL',0.3,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('COR*PINDO','COR*PINDO',1.1,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('EXT*PINDO','EXT*PINDO',0.45,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('CAR*PINDO','CAR*PINDO',0.45,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('EyC*PINDO','EyC*PINDO',0.9	,'NO');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE*M11/M.B.M.SV','ROLLO PIN.M11/M.B.M.',4.78,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE*PIN.MADER.ES','ROLLO PIN.M.MADER.ESP',9.03,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE*PIN.CHOD.ESP','ROLLO PINDO CHODORGE',0.8,'NO');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('COR-PINDO','COR-PINDO',1.1,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('CAR-PINDO','CAR-PINDO',0.45,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('MAD.ASSERR.A PIN','MAD.ASSERR.A PIN',3.65,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE.NOGUEL/Pto2º','ROLLO ANAHI-NOGU.P.2º',14.92,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('COR+PARAISO/M20','COR+PARAISO/M21',1.1,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('EXT+PARAISO/M20','EXT+PARAISO/M21',0.45,'SI');
-INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE@NOGUEL/HELVE','ROLLO GUA-NOGU.HELVEC',14.92,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('CAR*KISIEL','CAR*KISIEL',30,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('COR*PINDO','COR*PINDO',110,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('EXT*PINDO','EXT*PINDO',45,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('CAR*PINDO','CAR*PINDO',45,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('EyC*PINDO','EyC*PINDO',90	,'NO');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE*M11/M.B.M.SV','ROLLO PIN.M11/M.B.M.',478,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE*PIN.MADER.ES','ROLLO PIN.M.MADER.ESP',903,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE*PIN.CHOD.ESP','ROLLO PINDO CHODORGE',80,'NO');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('COR-PINDO','COR-PINDO',110,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('CAR-PINDO','CAR-PINDO',45,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('MAD.ASSERR.A PIN','MAD.ASSERR.A PIN',365,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE.NOGUEL/Pto2º','ROLLO ANAHI-NOGU.P.2º',1492,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('COR+PARAISO/M20','COR+PARAISO/M21',110,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('EXT+PARAISO/M20','EXT+PARAISO/M21',45,'SI');
+INSERT INTO corte (corte, descripcion, precioVenta, activo) VALUES ('FLE@NOGUEL/HELVE','ROLLO GUA-NOGU.HELVEC',1492,'SI');
 --SELECT * FROM corte
 
 ---------------
