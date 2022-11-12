@@ -13,7 +13,7 @@ DECLARE @total  DECIMAL(10,2)
 	RETURN @total 
 END
 
-SELECT ei.cod_empleado,ei.fecha, dbo.F_InsumpoPorEmpleado(2) 'Total por Insumo'
+SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado(2) 'Total por Insumo'
 	FROM empleado_insumo ei
 	WHERE ei.id_insumo = 2
 
