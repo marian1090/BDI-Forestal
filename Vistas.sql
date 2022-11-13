@@ -43,7 +43,7 @@ go
 SELECT * FROM VW_NOMINA_EMPLEADO
 
 
-/*CONSULTA DE LOS INSUMOS UTILIZADOS DEL MES ACTUAL*/
+/*CONSULTA DE LOS INSUMOS UTILIZADOS EN EL MES ACTUAL*/
 CREATE VIEW [dbo].[VW_INSUMOS_UTILIZADOS]
  AS
 SELECT  i.id_insumo AS 'N° de insumo', 
@@ -60,3 +60,23 @@ WHERE    ( MONTH(ei.fecha) = MONTH(GETDATE()) -1 ) --RESTAMOS 1 POR QUE ESTAMOS 
 go
 
 SELECT * FROM VW_INSUMOS_UTILIZADOS
+
+
+
+/*CONSULTA DE LOS VALES UTILIZADOS EN EL MES ACTUAL*/
+CREATE VIEW [dbo].[VW_VALES_UTILIZADOS]
+ AS
+SELECT  v.id_tipo_vale AS 'N° de vale', 
+		v.fecha AS 'Fecha',
+		tv.nombre AS 'Nombre', 
+		CONCAT('$ ', v.monto) AS 'Monto',
+		CONCAT(e.apellido, ' ', e.nombre) AS 'Nombre y Apellido'
+
+FROM    vale v
+	    INNER JOIN tipo_vale tv ON  v.id_tipo_vale = tv.id_tipo_vale
+		INNER JOIN empleado e ON v.cod_empleado = e.cod_empleado
+                   
+WHERE    ( MONTH(v.fecha) = MONTH(GETDATE()) -1 ) --RESTAMOS 1 POR QUE ESTAMOS EN MES 11 Y EL LOTE DE DATOS CONTIENE RESGISTROS HASTA EL MES 10
+go
+
+SELECT * FROM VW_VALES_UTILIZADOS
