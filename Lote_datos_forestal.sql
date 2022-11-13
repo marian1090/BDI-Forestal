@@ -46,7 +46,8 @@ INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ing
 INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES (1,'5/32','ANTONIO','WORONOWICZ',20368457771,'19971108','SI');
 INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES (9,'46/8','LEONCIO','CORREA',20085419332,'19980613','SI');
 INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES (6,'49/9','DIONICIO','AYALA',20162944479,'20021107','SI');
-INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES (8,'11/6','BASILIO BENITO','BENITEZ',23186856449,'19960801','SI');
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES (8,'6/2','JOSE ATILIO','QUINTANA',24133247137,'19990112','SI');
+
 --SELECT * FROM empleado
 
 
