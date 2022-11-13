@@ -22,13 +22,13 @@ DECLARE @total  DECIMAL(10,2)
 		FROM empleado e
 		INNER JOIN empleado_insumo ei ON (e.cod_empleado = ei.cod_empleado)
 		INNER JOIN insumo i ON (ei.id_insumo = i.id_insumo)
-		WHERE ei.cod_empleado = @empleado
+		WHERE ei.cod_empleado = @empleado 
 	RETURN @total 
 END
 
-SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado(2) 'Total por Insumo'
+SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado(2,6) 'Total por Insumo'
 	FROM empleado_insumo ei
-	WHERE ei.id_insumo = 2
+	WHERE eI.cod_empleado = 2
 
 
 CREATE FUNCTION  dbo.F_TotalPorRemito (
