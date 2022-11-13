@@ -11,6 +11,7 @@
 --FUNCIONES
 --------------------------------------
 
+--Funcion que permite ver los insumos que utilizo cada empleado (pasado por parametro)
 CREATE FUNCTION  F_InsumpoPorEmpleado (
 @empleado INT
 )
@@ -26,11 +27,11 @@ DECLARE @total  DECIMAL(10,2)
 	RETURN @total 
 END
 
-SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado(2,6) 'Total por Insumo'
+SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado(2) 'Total por Insumo'
 	FROM empleado_insumo ei
 	WHERE eI.cod_empleado = 2
 
-
+--Funcion que permite ver la cantidad en tonelada y el total por un determinado remito entregado
 CREATE FUNCTION  dbo.F_TotalPorRemito (
 @remito INT
 )
@@ -48,11 +49,11 @@ DECLARE @total  DECIMAL(10,2)
 	RETURN @total 
 END
 
-SELECT r.id_remito, r.fecha, dbo.F_TotalPorRemito(2) 'Total por Remito'
+SELECT r.id_remito, r.fecha, r.cantidad, dbo.F_TotalPorRemito(2) 'Total por Remito'
 	FROM remito r
 	WHERE r.id_remito = 2
 
-
+--Funcion que permite visualizar el sueldo de un empleado en un determidado mes
 CREATE FUNCTION  F_SueldoEmpleado (
 @empleado INT,
 @fecha INT
@@ -107,4 +108,6 @@ InsumoEmpleado.Total, Vale.Mvale, Anticipo.MAnticipo
 END
 
 
-select e.cod_empleado,e.nombre, dbo.F_SueldoEmpleado(4,10) from empleado e WHERE e.cod_empleado = 4
+SELECT e.cod_empleado,e.nombre, dbo.F_SueldoEmpleado(4,10) 
+FROM empleado e 
+WHERE e.cod_empleado = 4
