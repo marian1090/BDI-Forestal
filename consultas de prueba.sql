@@ -48,43 +48,51 @@ select produccion_corte.id_produccion, sum(corte.precioVenta * produccion_corte.
 
 --Calculo sueldo mesual a pagar de los empleados  (terminar)
 
-SELECT  e.cod_empleado,
+SELECT  e.cod_empleado 'N°',
 		CONCAT(e.apellido, ' ', e.nombre)  'Nombre y Apellido',
 	    te.sueldoBasico 'Sueldo Básico',
 		CAST(ISNULL(TotalRemitoEmpleado.Total,0) AS DECIMAL(10,2))  'Total por Producciones',
-		CAST(ISNULL(InsumoEmpleado.Total,0)AS DECIMAL(10,2))'Total',
-		CAST(ISNULL(Vale.Mvale,0) AS DECIMAL(10,2))'Vale',
-		CAST(ISNULL(a.monto,0)AS DECIMAL(10,2))'Monto',
-		(te.sueldoBasico) + (ISNULL(TotalRemitoEmpleado.Total,0)) - (ISNULL(InsumoEmpleado.Total,0)) - (ISNULL(Vale.Mvale,0)) - (ISNULL(a.monto,0)) 'Total'
+		CAST(ISNULL(InsumoEmpleado.Total,0)AS DECIMAL(10,2))'Descuento Insumos',
+		CAST(ISNULL(Vale.Mvale,0) AS DECIMAL(10,2))'Descuento Vales',
+		CAST(ISNULL(Anticipo.MAnticipo,0)AS DECIMAL(10,2))'Descuento Anticipos',
+		(te.sueldoBasico) + (ISNULL(TotalRemitoEmpleado.Total,0)) - (ISNULL(InsumoEmpleado.Total,0)) - (ISNULL(Vale.Mvale,0)) - (ISNULL(Anticipo.MAnticipo,0)) 'Total'
 
 FROM    empleado e
 INNER JOIN tipo_empleado te ON e.id_TipoEmpleado = te.id_TipoEmpleado
-FULL OUTER JOIN vale v ON e.cod_empleado = v.cod_empleado
-FULL OUTER JOIN anticipo a ON e.cod_empleado = a.cod_empleado
 FULL OUTER JOIN 
-(
-		SELECT er.cod_empleado, CAST(SUM((c.precioVenta * pc.cantidad) * (r.cantidad/p.toneladas)) AS DECIMAL(10,2)) 'Total'
-			FROM produccion_corte pc
-			INNER JOIN corte c ON (pc.cod_corte = c.cod_corte)
-			INNER JOIN remito r ON (pc.id_produccion = r.id_produccion)
-			INNER JOIN produccion p ON (pc.id_produccion = p.id_produccion)
-			INNER JOIN empleado_remito er ON r.id_remito = er.id_remito 
-			GROUP BY er.cod_empleado
+(                                                  --calculo del monto de los remitos entregados por empleado para el mes 10
+	SELECT er.cod_empleado, CAST(SUM((c.precioVenta * pc.cantidad) * (r.cantidad/p.toneladas)) AS DECIMAL(10,2)) 'Total'
+		FROM produccion_corte pc
+		INNER JOIN corte c ON (pc.cod_corte = c.cod_corte)
+		INNER JOIN remito r ON (pc.id_produccion = r.id_produccion)
+		INNER JOIN produccion p ON (pc.id_produccion = p.id_produccion)
+		INNER JOIN empleado_remito er ON r.id_remito = er.id_remito
+		WHERE ( MONTH(r.fecha) = MONTH(GETDATE()) -1 )
+		GROUP BY er.cod_empleado
 )AS TotalRemitoEmpleado ON e.cod_empleado = TotalRemitoEmpleado.cod_empleado
 FULL OUTER JOIN
-(
+(                                                 --calculo de los insumos utilzados por los empleados para el mes 10
 	SELECT SUM(i.precio * ei.cantidad) 'Total', ei.cod_empleado
-	FROM empleado_insumo ei
-	INNER JOIN insumo i ON (ei.id_insumo = i.id_insumo )
-	GROUP BY ei.cod_empleado 
+		FROM empleado_insumo ei
+		INNER JOIN insumo i ON (ei.id_insumo = i.id_insumo )
+		WHERE ( MONTH(ei.fecha) = MONTH(GETDATE()) -1 )
+		GROUP BY ei.cod_empleado 
 ) AS InsumoEmpleado ON e.cod_empleado = InsumoEmpleado.cod_empleado
 FULL OUTER JOIN
-(
+(                                                 --calculo de los vales utilizados 
 	SELECT SUM(v.monto) Mvale, e.cod_empleado
-	FROM empleado e
-	FULL OUTER JOIN vale v ON (e.cod_empleado = v.cod_empleado)
-	GROUP BY e.cod_empleado
-	) AS Vale ON e.cod_empleado = vale.cod_empleado
-
+		FROM empleado e
+		FULL OUTER JOIN vale v ON (e.cod_empleado = v.cod_empleado)
+		WHERE ( MONTH(v.fecha) = MONTH(GETDATE()) -1 )
+		GROUP BY e.cod_empleado
+) AS Vale ON e.cod_empleado = vale.cod_empleado
+FULL OUTER JOIN
+(                                                 --calcilo de los anticipos solicitados del mes 10
+	SELECT SUM(a.monto) MAnticipo, e.cod_empleado
+		FROM empleado e
+		FULL OUTER JOIN anticipo a ON (e.cod_empleado = a.cod_empleado)
+		WHERE ( MONTH(a.fecha) = MONTH(GETDATE()) -1 )
+		GROUP BY e.cod_empleado
+) AS Anticipo ON e.cod_empleado = Anticipo.cod_empleado
 GROUP BY e.cod_empleado, CONCAT(e.apellido, ' ', e.nombre), te.sueldoBasico,TotalRemitoEmpleado.Total, 
-InsumoEmpleado.Total, Vale.Mvale, a.monto
+InsumoEmpleado.Total, Vale.Mvale, Anticipo.MAnticipo
