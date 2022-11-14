@@ -4,9 +4,9 @@
 --GRUPO 20 
 --COMISION 4
 --INTEGRANTES:
---          BARTOLUCCI, Gastón Leonel
+--          BARTOLUCCI, Gastï¿½n Leonel
 --          OJEDA, Lidia Mariangeles	
---          RAMIREZ, Alfredo Agustín	
+--          RAMIREZ, Alfredo Agustï¿½n	
 --          ZAPATA, Sergio Ariel
 --DEFINICION MODELO DE DATOS.
 --------------------------------------
@@ -169,6 +169,20 @@ CREATE TABLE empleado_remito (
 );
 
 --RESTRICCIONES DE TABLAS--
-/*1 - el número de legajo de un empleado es único */
+/*1 - el nï¿½mero de legajo de un empleado es ï¿½nico */
 ALTER TABLE empleado
 	ADD CONSTRAINT UQ_empleado_legajo UNIQUE (legajo);
+
+/*1 - la columna activo de las tablas solo aceptan valores 'SI' y'NO' */
+ALTER TABLE empleado 
+	ADD CONSTRAINT CK_empleado_estado CHECK(activo IN('SI','NO'))
+
+ALTER TABLE tipo_empleado 
+	ADD CONSTRAINT CK_tipo_empleado_estado CHECK(activo IN('SI','NO'))
+
+ALTER TABLE insumo 
+	ADD CONSTRAINT CK_insumo_estado CHECK(activo IN('SI','NO'))
+
+ALTER TABLE corte 
+	ADD CONSTRAINT CK_corte_estado CHECK(activo IN('SI','NO'))
+
