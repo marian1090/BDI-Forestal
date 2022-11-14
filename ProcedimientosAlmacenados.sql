@@ -1,3 +1,17 @@
+﻿--------------------------------------
+--BASE DE DATOS I.
+--PROYECTO: BD EMPRESA FORESTAL 
+--GRUPO 20 
+--COMISION 4
+--INTEGRANTES:
+--          BARTOLUCCI, Gast�n Leonel
+--          OJEDA, Lidia Mariangeles	
+--          RAMIREZ, Alfredo Agust�n	
+--          ZAPATA, Sergio Ariel
+--PROCEDIMIENTOS ALMACENADOS
+--------------------------------------
+
+--Procidimiento para el alta de un empleado
 CREATE PROCEDURE AltaEmpleado
 	@id_TipoEmpleado INT,
 	@legajo VARCHAR(15),
@@ -31,6 +45,8 @@ BEGIN
 	END CATCH
 END
 
+
+--Procidimiento para el alta de un corte
 CREATE PROCEDURE AltaCorte
 	@corte VARCHAR(50),
 	@descripcion VARCHAR(200),
@@ -56,7 +72,7 @@ BEGIN
 	END CATCH
 END
 
-
+--Procidimiento para el alta de un remito
 CREATE PROCEDURE AltaRemito
 	@primeros INT,
 	@id_produccion INT,
@@ -83,6 +99,8 @@ BEGIN
 END
 
 
+
+--Procedimiento para el alta de un remito-empleado
 CREATE PROCEDURE AltaRemitoEmpleado
 	@cod_empleado INT,
 	@primeros INT,
@@ -104,3 +122,5 @@ BEGIN
 				PRINT 'OCURRIO UN ERROR '+'EN LA LINEA '+CONVERT(VARCHAR(255), ERROR_LINE())+'.'
 	END CATCH
 END
+
+EXEC AltaRemitoEmpleado 11, 4, 20
