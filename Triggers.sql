@@ -36,9 +36,9 @@ UPDATE empleado_remito SET primeros =
 									WHERE id_remito = @id)
 WHERE id_remito = @id
 
---Borra de la tabla empleado_insumo el registro asociado al insumo
-CREATE TRIGGER TR_insumo ON insumo
+--Borra de la tabla empleado_produccion el registro asociado a una produccion cancelada
+CREATE TRIGGER TR_empleado_produccion ON produccion
 INSTEAD OF DELETE 
-AS DECLARE @id int = (SELECT id_insumo FROM deleted)
-DELETE FROM empleado_insumo WHERE id_insumo = @id
-DELETE FROM insumo WHERE id_insumo = @id
+AS DECLARE @id int = (SELECT id_produccion FROM deleted)
+DELETE FROM empleado_produccion WHERE id_produccion = @id
+DELETE FROM produccion WHERE id_produccion = @id
