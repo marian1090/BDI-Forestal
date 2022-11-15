@@ -1,4 +1,4 @@
-﻿--------------------------------------
+﻿ --------------------------------------
 --BASE DE DATOS I.
 --PROYECTO: BD EMPRESA FORESTAL 
 --GRUPO 20 
@@ -112,15 +112,6 @@ EXEC AltaRemito 6, 7, '2022129', 50
 
 --Procedimiento para el alta de un remito-empleado
 EXEC AltaRemitoEmpleado 11, 4, 20
-
-
------------------
---Disparadores
------------------
-
------------------
---Transacciones
------------------
 
 -----------------
 --Vistas
