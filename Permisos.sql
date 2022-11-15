@@ -26,20 +26,20 @@ CREATE LOGIN [ABM] WITH PASSWORD = '1234',
 CHECK_EXPIRATION = OFF, 
 CHECK_POLICY = OFF,
 DEFAULT_DATABASE = Forestal;
-GO;
-USE Foretal;
+GO
+USE Forestal;
 CREATE USER Administrativo FOR LOGIN ABM;
-EXEC sp_addrolemember 'db_datareader','Rodrigo';
-EXEC sp_addrolemember 'db_datawriter','Rodrigo';
-GO;
+EXEC sp_addrolemember 'db_datareader','Administrativo';
+EXEC sp_addrolemember 'db_datawriter','Administrativo';
+GO
 
 
 --CREACION  DE INICIO DE SESION CONSULTA Y ROL PUBLICO--
 CREATE LOGIN [Consulta] WITH PASSWORD = '1234',
 CHECK_EXPIRATION = OFF, 
 CHECK_POLICY = OFF,
-DEFAULT_DATABASE = base_inventario;
-USE base_inventario
+DEFAULT_DATABASE = Forestal;
+USE Forestal
 CREATE USER Empleado FOR LOGIN Consulta;
 -- ASIGNACION DE FUNCIONES DE USUARIO
 --LOGIN: CONSULTA
