@@ -44,7 +44,6 @@ CREATE USER Empleado FOR LOGIN Consulta;
 -- ASIGNACION DE FUNCIONES DE USUARIO
 --LOGIN: CONSULTA
 GRANT select on VW_INSUMOS_UTILIZADOS to Empleado
-GRANT select on VW_NOMINA_EMPLEADOS to Empleado
 GRANT select on VW_REMITO_PRODUCCION to Empleado
 GRANT select on VW_VALES_UTILIZADOS to Empleado
 Deny Insert, Delete, Update to Empleado
