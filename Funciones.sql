@@ -47,7 +47,7 @@ AS
 SELECT * from F_InsumpoPorEmpleado_Tabla(10)
 	
 
---Funcion que permite ver la cantidad en tonelada y el total por un determinado remito entregado
+--Funcion que permite ver la cantidad en tonelada y el total de un determinado remito entregado
 CREATE FUNCTION  dbo.F_TotalPorRemito_tabla (
 @remito INT
 )

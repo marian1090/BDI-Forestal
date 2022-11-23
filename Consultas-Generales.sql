@@ -84,34 +84,61 @@ InsumoEmpleado.Total, Vale.Mvale, Anticipo.MAnticipo
 ---------------------------------------------
 
 --Funcion que permite ver los insumos que utilizo cada empleado (pasado por parametro)
-SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado(10) 'Total por Insumo'
+SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado_Scalar(3) 'Total por Insumo'
 	FROM empleado_insumo ei
-	WHERE eI.cod_empleado = 10
+	WHERE eI.cod_empleado = 3
+
+SELECT * from F_InsumpoPorEmpleado_Tabla(10)
 
 --Funcion que permite ver la cantidad en tonelada y el total por un determinado remito entregado
-SELECT r.id_remito, r.fecha, r.cantidad, dbo.F_TotalPorRemito(2) 'Total por Remito'
-	FROM remito r
-	WHERE r.id_remito = 2
+SELECT * FROM dbo.F_TotalPorRemito_tabla(2)
 
 --Funcion que permite visualizar el sueldo de un empleado en un determidado mes
-SELECT e.cod_empleado,e.nombre, dbo.F_SueldoEmpleado(4,10) 
-	FROM empleado e 
-	WHERE e.cod_empleado = 4
+SELECT * FROM dbo.F_SueldoEmpleado_Tabla(2,10)
 
 
---Procidimiento para el alta de un empleado
-EXEC AltaEmpleado 5, '54/89', 'ESTEBAN', 'ESCOBAR', 24258749514, '20221111', 'SI' --ok
-EXEC AltaEmpleado 5, '54/89', 'ESTEBAN', 'ESCOBAR', 24258749514, '20221111', 'SI' --error. legajo no es unico
+--Procedimiento para el alta de un empleado
+EXEC SP_AltaEmpleado 5, '555555', 'ESTEBAN', 'ESCOBAR', 24258749514, '20221111', 'SI' --ok
+EXEC SP_AltaEmpleado 5, '54/89', 'ESTEBAN', 'ESCOBAR', 24258749514, '20221111', 'SI' --error. legajo no es unico
 
 --Procidimiento para el alta de un corte
-EXEC AltaCorte 'FLE*Km1/MADER.ES', 'ROLLO PIN.Km1/MADE/ES', 42, 'SI'
-EXEC AltaCorte 'FLE*Km1/MADER.ES', 'ROLLO PIN.Km1/MADE/ES', 42, 'SI'
+EXEC SP_AltaCorte 'FLE*Km1/MADER.ES', 'ROLLO PIN.Km1/MADE/ES', 42, 'SI' --ok
 
 --Procedimiento para el alta de un remito
-EXEC AltaRemito 6, 7, '2022129', 50
+EXEC SP_AltaRemito 5, 4, '20221027', 50
 
 --Procedimiento para el alta de un remito-empleado
-EXEC AltaRemitoEmpleado 11, 4, 20
+EXEC SP_AltaRemitoEmpleado 1, 5, 26
+
+-----------------
+--Triggers
+-----------------
+--Muestra 'Empleado Registrado' cada vez que se registra uno (TR_empleado)
+INSERT INTO empleado (id_TipoEmpleado, legajo, nombre, apellido, cuil, fecha_ingreso, activo) VALUES(7,'13555555','ANDREZ','ESTEPA',	20149737856	,'10/01/1996','SI');
+select * from empleado
+
+--Cambia el activo a 'NO' de un empleado cuando el tipo de empleado asociado cambia a 'NO' (TR_Tipoempleado)
+select * from tipo_empleado
+select * from empleado
+
+UPDATE tipo_empleado SET activo = 'NO' WHERE id_TipoEmpleado = 7
+
+--Borra de la tabla empleado_produccion el registro asociado a una produccion cancelada (TR_empleado_produccion)
+INSERT INTO produccion(fecha, toneladas) VALUES('20221129', 100)
+
+INSERT INTO empleado_produccion(cod_empleado, id_produccion) VALUES(11, 8)
+INSERT INTO empleado_produccion(cod_empleado, id_produccion) VALUES(8, 8)
+INSERT INTO empleado_produccion(cod_empleado, id_produccion) VALUES(6, 8)
+
+select * from produccion
+select * from empleado_produccion order by id_produccion
+
+delete from produccion where id_produccion = 8
+
+-----------------
+--Transacciones
+-----------------
+
 
 -----------------
 --Vistas
