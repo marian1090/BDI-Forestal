@@ -12,7 +12,7 @@
 --------------------------------------
 
 --Funcion que permite ver los insumos que utilizo cada empleado (pasado por parametro)
-CREATE FUNCTION  F_InsumpoPorEmpleado (
+CREATE FUNCTION  F_InsumpoPorEmpleado_Scalar (
 @empleado INT
 )
 RETURNS FLOAT
@@ -27,7 +27,7 @@ DECLARE @total  DECIMAL(10,2)
 	RETURN @total 
 END
 
-SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado(2) 'Total por Insumo'
+SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado_Scalar(2) 'Total por Insumo'
 	FROM empleado_insumo ei
 	WHERE eI.cod_empleado = 2
 
@@ -68,6 +68,22 @@ END
 SELECT r.id_remito, r.fecha, r.cantidad, dbo.F_TotalPorRemito(2) 'Total por Remito'
 	FROM remito r
 	WHERE r.id_remito = 2
+
+CREATE FUNCTION  dbo.F_TotalPorRemito_tabla (
+@remito INT
+)
+RETURNS TABLE
+AS 
+
+	RETURN (SELECT r.id_remito, r.cantidad,  CAST(SUM((c.precioVenta * pc.cantidad) * (r.cantidad/p.toneladas)) AS DECIMAL(10,2)) 'Total por remito'
+		FROM produccion_corte pc
+				INNER JOIN corte c ON (pc.cod_corte = c.cod_corte)
+				INNER JOIN remito r ON (pc.id_produccion = r.id_produccion)
+				INNER JOIN produccion p ON (pc.id_produccion = p.id_produccion)
+		WHERE r.id_remito = @remito
+		GROUP BY r.id_remito, r.cantidad)
+
+SELECT * FROM dbo.F_TotalPorRemito_tabla(2)
 
 --Funcion que permite visualizar el sueldo de un empleado en un determidado mes
 CREATE FUNCTION  F_SueldoEmpleado (
