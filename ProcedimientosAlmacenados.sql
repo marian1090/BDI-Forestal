@@ -12,7 +12,7 @@
 --------------------------------------
 
 --Procidimiento para el alta de un empleado
-CREATE PROCEDURE AltaEmpleado
+CREATE PROCEDURE SP_AltaEmpleado
 	@id_TipoEmpleado INT,
 	@legajo VARCHAR(15),
 	@nombre VARCHAR(50),
@@ -47,7 +47,7 @@ END
 
 
 --Procidimiento para el alta de un corte
-CREATE PROCEDURE AltaCorte
+CREATE PROCEDURE SP_AltaCorte
 	@corte VARCHAR(50),
 	@descripcion VARCHAR(200),
 	@precioVenta DECIMAL(10,2),
@@ -73,7 +73,7 @@ BEGIN
 END
 
 --Procidimiento para el alta de un remito
-CREATE PROCEDURE AltaRemito
+CREATE PROCEDURE SP_AltaRemito
 	@primeros INT,
 	@id_produccion INT,
 	@fecha DATE,
@@ -101,7 +101,7 @@ END
 
 
 --Procedimiento para el alta de un remito-empleado
-CREATE PROCEDURE AltaRemitoEmpleado
+CREATE PROCEDURE SP_AltaRemitoEmpleado
 	@cod_empleado INT,
 	@primeros INT,
 	@id_remito INT
