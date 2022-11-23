@@ -31,6 +31,22 @@ SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado(2) 'Total
 	FROM empleado_insumo ei
 	WHERE eI.cod_empleado = 2
 
+CREATE FUNCTION  F_InsumpoPorEmpleado_Tabla (
+@empleado INT
+)
+returns table
+AS 
+
+	RETURN (SELECT e.cod_empleado, i.id_insumo, ei.fecha,  SUM(precio * cantidad) 'Total por insumo'
+		FROM empleado e
+		INNER JOIN empleado_insumo ei ON (e.cod_empleado = ei.cod_empleado) 
+		INNER JOIN insumo i ON (ei.id_insumo = i.id_insumo)
+		WHERE ei.cod_empleado = @empleado
+		GROUP BY  e.cod_empleado,i.id_insumo,ei.fecha)
+
+SELECT * from F_InsumpoPorEmpleado(10)
+	
+
 --Funcion que permite ver la cantidad en tonelada y el total por un determinado remito entregado
 CREATE FUNCTION  dbo.F_TotalPorRemito (
 @remito INT
