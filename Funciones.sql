@@ -12,24 +12,6 @@
 --------------------------------------
 
 --Funcion que permite ver los insumos que utilizo cada empleado (pasado por parametro)
-CREATE FUNCTION  F_InsumpoPorEmpleado_Scalar (
-@empleado INT
-)
-RETURNS FLOAT
-AS 
-BEGIN
-DECLARE @total  DECIMAL(10,2)
-	SELECT @total  =  SUM(precio * cantidad)
-		FROM empleado e
-		INNER JOIN empleado_insumo ei ON (e.cod_empleado = ei.cod_empleado)
-		INNER JOIN insumo i ON (ei.id_insumo = i.id_insumo)
-		WHERE ei.cod_empleado = @empleado 
-	RETURN @total 
-END
-
-SELECT ei.cod_empleado,ei.id_insumo,ei.fecha, dbo.F_InsumpoPorEmpleado_Scalar(2) 'Total por Insumo'
-	FROM empleado_insumo ei
-	WHERE eI.cod_empleado = 2
 
 CREATE FUNCTION  F_InsumpoPorEmpleado_Tabla (
 @empleado INT
@@ -113,4 +95,4 @@ FULL OUTER JOIN
 WHERE e.cod_empleado = @empleado
 GROUP BY e.cod_empleado,CONCAT(e.nombre,' ',e.apellido),te.sueldoBasico,TotalRemitoEmpleado.Total,InsumoEmpleado.Total,Vale.Mvale,Anticipo.MAnticipo)
 
-SELECT * FROM dbo.F_SueldoEmpleado_Tabla(2,10)
+SELECT * FROM dbo.F_SueldoEmpleado_Tabla(3,10)

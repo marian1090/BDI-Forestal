@@ -45,6 +45,9 @@ BEGIN
 	END CATCH
 END
 
+EXEC SP_AltaEmpleado 5, '54/89', 'ESTEBAN', 'ESCOBAR', 24258749514, '20221111', 'SI' --ok
+EXEC SP_AltaEmpleado 5, '54/89', 'ESTEBAN', 'ESCOBAR', 24258749514, '20221111', 'SI' --error. legajo no es unico
+
 
 --Procidimiento para el alta de un corte
 CREATE PROCEDURE SP_AltaCorte
@@ -72,7 +75,10 @@ BEGIN
 	END CATCH
 END
 
---Procidimiento para el alta de un remito
+EXEC SP_AltaCorte 'FLE*Km1/MADER.ES', 'ROLLO PIN.Km1/MADE/ES', 42, 'SI' --ok
+EXEC SP_AltaCorte 'FLE*Km1/MADER.ES', 'ROLLO PIN.Km1/MADE/ES', 42, 'OTRO' --error
+
+--Procedimiento para el alta de un remito
 CREATE PROCEDURE SP_AltaRemito
 	@primeros INT,
 	@id_produccion INT,
@@ -98,7 +104,9 @@ BEGIN
 	END CATCH
 END
 
+EXEC SP_AltaRemito 5, 4, '20221027', 60
 
+SELECT * FROM remito ORDER BY id_remito
 
 --Procedimiento para el alta de un remito-empleado
 CREATE PROCEDURE SP_AltaRemitoEmpleado
@@ -123,4 +131,6 @@ BEGIN
 	END CATCH
 END
 
-EXEC AltaRemitoEmpleado 11, 4, 20
+EXEC AltaRemitoEmpleado 11, 5, 14
+
+SELECT * FROM empleado_remito ORDER BY id_remito

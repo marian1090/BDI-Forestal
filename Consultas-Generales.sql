@@ -28,7 +28,7 @@ SELECT * FROM produccion_corte;
 SELECT * FROM empleado_produccion;
 
 
---Calculo sueldo mesual a pagar de los empleados  (terminar)
+--Calculo sueldo mesual a pagar de los empleados  
 
 SELECT  e.cod_empleado 'N°',
 		CONCAT(e.apellido, ' ', e.nombre)  'Nombre y Apellido',

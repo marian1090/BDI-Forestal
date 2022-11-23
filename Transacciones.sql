@@ -19,10 +19,10 @@ SELECT @alta = 'AltaEmpleados_Remitos';
 	USE Forestal;
 
 	BEGIN TRY
-		INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (9,4,1);
-		INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (2,4,1);
-		INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (8,4,1);
-		INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (14,4,1);
+		INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (9,5,14);
+		INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (2,5,14);
+		INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (8,5,14);
+		INSERT INTO empleado_remito (cod_empleado, primeros, id_remito) VALUES (14,5,144);
 		COMMIT TRANSACTION @Alta
 		PRINT 'EL REMITO SE HA AGREGADO CORRECTAMENTE A CADA EMPLEADO'
 	END TRY
@@ -40,11 +40,10 @@ DECLARE @alta VARCHAR(50);
 SELECT @Alta = 'AltaEmpleados_Produccion';
 	BEGIN TRAN @alta
 		BEGIN TRY
-			INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (14,7);
-			INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (8,7);
-			INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (9,7);
-			INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (2,7);
-			INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (15,7);
+			INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (14,5);
+			INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (9,5);
+			INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (2,5);
+			INSERT INTO empleado_produccion (cod_empleado, id_produccion) VALUES (13,5);
 	
 			COMMIT TRANSACTION @Alta
 			PRINT 'LOS EMPLEADOS DE LA PRODUCCION SE HAN AGREGADO CORRECTAMENTE'
@@ -59,6 +58,7 @@ SELECT @Alta = 'AltaEmpleados_Produccion';
 SELECT * FROM empleado_produccion ORDER by id_produccion
 
 INSERT INTO produccion(fecha, toneladas) VALUES('20221130', 100)
+
 SELECT * FROM produccion ORDER by id_produccion
  
 -- CARGA DE REGISTROS DE LA TABLA "produccion_corte"
@@ -66,10 +66,10 @@ DECLARE @alta VARCHAR(50);
 SELECT @Alta = 'AltaProduccion_Corte';
 	BEGIN TRAN @Alta
 	BEGIN TRY
-		INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (7,10,120);
-		INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (7,9,80);
-		INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (7,15,150);
-		INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (7,3,75);
+		INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (5,10,120);
+		INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (5,9,80);
+		INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (5,15,150);
+		INSERT INTO produccion_corte (id_produccion, cod_corte, cantidad) VALUES (55,3,75);
 	
 		COMMIT TRANSACTION @Alta
 		PRINT 'LOS CORTES DE LA PRODUCCION SE HAN AGREGADO CORRECTAMENTE'
